@@ -1,0 +1,38 @@
+{
+  "name": "canvg-loader",
+  "version": "0.0.1",
+  "description": "SVG to Canvas draw function loader for Webpack",
+  "main": "./lib/loader.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryszard-Trojnacki/canvg-loader.git"
+  },
+  "keywords": [
+    "svg",
+    "canvas",
+    "webpack",
+    "loader",
+    "canvg"
+  ],
+  "author": "Ryszard Trojnacki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ryszard-Trojnacki/canvg-loader/issues"
+  },
+  "homepage": "https://github.com/Ryszard-Trojnacki/canvg-loader#readme",
+  "peerDependencies": {
+    "canvg": "^4.0.1",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "memfs": "^4.6.0",
+    "webpack": "^5.89.0"
+  }
+}
