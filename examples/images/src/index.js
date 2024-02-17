@@ -1,5 +1,6 @@
 import circle from './circle.svg';
 import android from './android.svg';
+import example1 from './example1.svg';
 
 export function draw(c, img, f) {
     const ctx=c.getContext('2d');
@@ -25,6 +26,7 @@ window.addEventListener('load', () => {
     select.value='circle';
     select.append(new Option('Circle', 'circle'));
     select.append(new Option('Android', 'android'));
+    select.append(new Option('Example1', 'example1'));
     body.append(select);
 
     const view=document.createElement('div');
@@ -54,9 +56,10 @@ window.addEventListener('load', () => {
         }else if(v==='android') {
             draw(canvas, img, android);
             img.src='./android.svg';
+        } else if(v==='example1') {
+            draw(canvas, img, example1);
+            img.src='./example1.svg';
         }
     }
-
-
-
+    select.onchange({target: select});
 })
