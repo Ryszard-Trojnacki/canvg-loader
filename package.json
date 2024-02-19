@@ -1,5 +1,5 @@
 {
-  "name": "canvg-loader",
+  "name": "@rtprog/canvg-loader",
   "version": "0.0.1",
   "description": "SVG to Canvas draw function loader for Webpack",
   "main": "./lib/loader.js",
