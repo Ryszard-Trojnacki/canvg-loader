@@ -13,3 +13,11 @@ test("CircleSVG", async () => {
 
     expect(output).toContain('ctx.arc(50, 50, 40, 0, 6.283185307179586, false);');
 });
+
+test("ExampleSVG", async() => {
+    const stats = await compiler('./files/example1.svg');
+    const output = stats.toJson({ source: true }).modules[0].source;
+
+    console.log("Example1: ");
+    console.log(output);
+})
