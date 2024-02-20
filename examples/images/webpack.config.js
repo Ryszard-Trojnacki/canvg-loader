@@ -7,7 +7,7 @@ export default {
         rules: [
             {
                 test: /\.svg$/,
-                use: 'canvg-loader',
+                use: '@rtprog/canvg-loader',
             },
         ],
     },
