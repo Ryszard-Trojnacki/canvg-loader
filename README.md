@@ -11,7 +11,7 @@ Exported function can be used to draw SVG on any canvas.
 
 Add loader to your project
 ```bash
-npm install --save-dev canvg-loader
+npm install --save-dev @rtprog/canvg-loader
 ```
 
 Configure webpack to use canvg-loader for SVG files
@@ -21,7 +21,7 @@ export default {
         rules: [
             {
                 test: /\.svg$/,
-                use: 'canvg-loader',
+                use: '@rtprog/canvg-loader',
             },
         ],
     },
