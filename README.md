@@ -42,4 +42,47 @@ window.addEventListener('load', () => {
     drawImage(canvas);
 });
 ```
+
+# Usage in Gatsby
+In order to use this loader in [Gatsby](https://www.gatsbyjs.com/) application You need to install is as
+development dependency
+```shell
+npm install --save-dev @rtprog/canvg-loader
+```
+and configure Webpack. Configuring Webpack in Gatsby that is file `gatsby-node.js`:
+```javascript
+exports.onCreateWebpackConfig = ({ actions, getConfig, rules }) => {
+    // Add canvg-loader
+    actions.setWebpackConfig({
+        module: {
+            rules: [
+                {
+                    test: /\.svg$/,
+                    use: '@rtprog/canvg-loader',
+                },
+            ],
+        },
+    })
+    // Remove existing/default svg loader
+    const cfg=getConfig();
+    const imgsRule = rules.images()
+    const newUrlLoaderRule = {
+        ...imgsRule,
+        test: new RegExp(imgsRule.test.toString().replace('svg|', '').slice(1, -1))
+    }
+
+    cfg.module.rules = [
+        // Remove the base url-loader images rule entirely
+        ...cfg.module.rules.filter(rule => {
+            if (rule.test) {
+                return rule.test.toString() !== imgsRule.test.toString()
+            }
+            return true
+        }),
+        // Put it back without SVG loading
+        newUrlLoaderRule
+    ]
+    actions.replaceWebpackConfig(cfg)
+}
+```
  
